@@ -49,6 +49,9 @@ public class Magpie3
 		{
 			response = getRandomResponse();
 		}
+		if (findKeyword(statement, "cat") >=0){
+		    System.out.println("Does it work?");
+		  }
 		return response;
 	}
 

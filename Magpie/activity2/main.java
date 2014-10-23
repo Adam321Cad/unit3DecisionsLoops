@@ -37,7 +37,7 @@ public class main
 		Scanner in = new Scanner (System.in);
 		String statement = in.nextLine();
 		
-		while (!statement.equals("bye")  && !statement.equals("close") && !statement.equals("exit"))
+		while (!statement.equals("bye")  && !statement.equals("close") && !statement.equals("exit") && !statement.equals("stop"))
 		{
 			maggie.getResponse(statement);
 			statement = in.nextLine();

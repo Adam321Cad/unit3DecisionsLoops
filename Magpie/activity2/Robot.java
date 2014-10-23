@@ -52,6 +52,11 @@ public class Robot
        
         }
         
+        if (statement.indexOf("hi") !=-1 || statement.indexOf("hello") !=-1 || statement.indexOf("good day") !=-1) {
+            System.out.println("Hello");
+            work = 2;
+        }
+        
         if (statement.indexOf("what can you do") !=-1) {
             System.out.println("Anything and nothing at the same time. \nCurrently i am in development so try to get me to do a few things and tell Diamondrubix what does not work.\n");
             work = 2;
@@ -70,6 +75,10 @@ public class Robot
         if (statement.indexOf("cat") !=-1){
             System.out.println("Cats are weird. They never forgot they were worshiped as gods years ago.\n");
             work = 2;
+        }
+        
+        if (statement.indexOf("dog") !=-1){
+            System.out.println("Dogs are cool i guess but because i was based off the\npersonality of a stuffed cheetah i cannot say that i particularly like them.");
         }
         
         if (statement.indexOf("weather") !=-1){
@@ -96,7 +105,7 @@ public class Robot
             System.out.println("Try to keep a good mood");
         }
         
-        if (statement.indexOf("they") !=-1 && work == 1){
+        if (statement.indexOf("they") !=-1 && work == 2){
             System.out.println("Tell me more about them");
             work = 2;
         }
@@ -109,5 +118,5 @@ public class Robot
         //if (statement.indexOf("tell me about") !=-1){
             
         //}
-    }
-}
+       }
+     }
