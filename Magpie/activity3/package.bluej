@@ -2,12 +2,12 @@
 dependency1.from=MagpieRunner3
 dependency1.to=Magpie3
 dependency1.type=UsesDependency
-objectbench.height=100
+objectbench.height=489
 objectbench.width=1355
-package.editor.height=830
+package.editor.height=441
 package.editor.width=1562
-package.editor.x=32
-package.editor.y=32
+package.editor.x=-8
+package.editor.y=-8
 package.numDependencies=1
 package.numTargets=3
 package.showExtends=true
