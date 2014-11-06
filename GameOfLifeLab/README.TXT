@@ -30,6 +30,13 @@ The universe of the Game of Life is an infinite two-dimensional orthogonal
 	moment at which this happens is sometimes called a tick (in other words,
 	each generation is a pure function of the preceding one). The rules
 	continue to be applied repeatedly to create further generations.
+*MY STUFF!!!!!
+*I am going to do a 100 by 100 with a glider gun and a pulser
+*live cells are black spots dead are white
+*patters will most likely be hard coded at first but might end up being a user chosen thing.
+*it will run forever however it can be paused
+*the time intervle is 1 second between genreations
+*i was thinking about making the wrap around a setting you can turn on an off
 
 
 Nonfunctional Requirements:
