@@ -73,6 +73,10 @@ public class GameOfLife
         Rock rock3 = new Rock();
         Location loc3 = new Location(X3, Y3);
         grid.put(loc3, rock3);
+        
+        Rock rock4 = new Rock();
+        Location loc4 = new Location(5,5);
+        grid.put(loc4, rock4);
     }
 
     /**
