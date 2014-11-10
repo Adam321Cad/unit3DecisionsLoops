@@ -63,20 +63,34 @@ public class GameOfLife
         
         // create and add rocks (a type of Actor) to the three intial locations
         Rock rock1 = new Rock();
-        Location loc1 = new Location(X1, Y1);
+        Location loc1 = new Location(20, 21);
         grid.put(loc1, rock1);
         
+        Rock rock4 = new Rock();
+        Location loc4 = new Location(20,20);
+        grid.put(loc4, rock4);
+        
         Rock rock2 = new Rock();
-        Location loc2 = new Location(X2, Y2);
+        Location loc2 = new Location(18, 21);
         grid.put(loc2, rock2);
         
         Rock rock3 = new Rock();
-        Location loc3 = new Location(X3, Y3);
+        Location loc3 = new Location(19, 23);
         grid.put(loc3, rock3);
         
-        Rock rock4 = new Rock();
-        Location loc4 = new Location(5,5);
-        grid.put(loc4, rock4);
+        Rock rock5 = new Rock();
+        Location loc5 = new Location (20,24);
+        grid.put(loc5, rock5);
+        
+        Rock rock6 = new Rock();
+        Location loc6 = new Location (20,25);
+        grid.put(loc6, rock5);
+        
+        Rock rock7 = new Rock();
+        Location loc7 = new Location (20,26);
+        grid.put(loc7, rock7);
+        
+        
     }
 
     /**
@@ -95,6 +109,8 @@ public class GameOfLife
         
         // create the grid, of the specified size, that contains Actors
         Grid<Actor> grid = world.getGrid();
+        
+        
         
         // insert magic here...
         
