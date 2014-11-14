@@ -128,6 +128,7 @@ public class GameOfLife
     {
         Location loc = new Location(row, col);
         Actor actor = world.getGrid().get(loc);
+        System.out.println(actor);
         return actor;
     }
 
@@ -159,6 +160,7 @@ public class GameOfLife
     public static void main(String[] args)
     {
         GameOfLife game = new GameOfLife();
+        
     }
 
 }
