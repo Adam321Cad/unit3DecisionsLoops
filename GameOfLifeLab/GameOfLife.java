@@ -21,11 +21,6 @@ public class GameOfLife
     // the game board will have 5 rows and 5 columns
     private final int ROWS = 100;
     private final int COLS = 100;
-    
-    // constants for the location of the three cells initially alive
-    private final int X1 = 0, Y1 = 2;
-    private final int X2 = 2, Y2 = 0;
-    private final int X3 = 2, Y3 = 1;
 
     /**
      * Default constructor for objects of class GameOfLife
@@ -65,6 +60,8 @@ public class GameOfLife
     }
     
     
+    
+    
     private void populateGame()
     {
         // the grid of Actors that maintains the state of the game
@@ -82,6 +79,17 @@ public class GameOfLife
         makeActor(20,25);
         makeActor(20,26);
         
+        
+        /*
+        
+        makeActor(20,20);
+        makeActor(21,20);
+        makeActor(22,20);
+        makeActor(30,30);
+        makeActor(31,30);
+        makeActor(30,31);
+        makeActor(31,31);
+     */
     }
     
     private int neighbors(int x,int y){
@@ -98,11 +106,18 @@ public class GameOfLife
         /** You will need to read the documentation for the World, Grid, and Location classes
          *      in order to implement the Game of Life algorithm and leverage the GridWorld framework.
          */
-        
-        // create the grid, of the specified size, that contains Actors
         Grid<Actor> grid = world.getGrid();
+        // create the grid, of the specified size, that contains Actors
+        try {
+             Thread.sleep(1000);                 //1000 milliseconds is one second.
+          } catch(InterruptedException ex) {
+          Thread.currentThread().interrupt();
+          }
+
         ArrayList<Location> alive = new ArrayList<Location>(grid.getOccupiedLocations());
         ArrayList<Location> dead = new ArrayList<Location>();
+        ArrayList<Location> kill = new ArrayList<Location>();
+        ArrayList<Location> birth = new ArrayList<Location>();
         
         //fills dead array
         for (int x = 0; x<=this.COLS; x++){
@@ -114,9 +129,42 @@ public class GameOfLife
                 
             }
         }
+        int n = 0;
+        for(int x = 0;x <=this.COLS; x++){
+            for(int y = 0; y<=this.ROWS; y++){
+               
+
+                n = neighbors(x,y);
+                Location l = new Location(x,y);
+                if (alive.contains(l)){
+                    if (n<2 || n>3){
+                        kill.add(l);
+                    }
+                
+                }else{
+                    if (n == 3){
+                        //Rock r = new Rock();
+                        //grid.put(l,r);
+                        birth.add(l);
+                    }
+                }
+        }
+        }
         
-        System.out.println(neightbors(20,21));
+        for(int x1 = 0; x1<=this.COLS; x1++){
+            for(int y = 0; y<this.ROWS; y++){
+                Location l = new Location(x1,y);
+                if (kill.contains(l)){
+                    grid.remove(l);
+                }
+                if(birth.contains(l)){
+                    Rock r = new Rock();
+                    grid.put(l,r);
+                }
+            }
+        }
         
+        world.show();
         
         
         
@@ -141,7 +189,6 @@ public class GameOfLife
     {
         Location loc = new Location(row, col);
         Actor actor = world.getGrid().get(loc);
-        System.out.println(actor);
         return actor;
     }
 
@@ -173,7 +220,9 @@ public class GameOfLife
     public static void main(String[] args)
     {
         GameOfLife game = new GameOfLife();
-        
+        for(int i = 0; i<=100;){
+        game.createNextGeneration();
+    }
     }
 
 }
