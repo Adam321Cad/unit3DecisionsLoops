@@ -10,8 +10,8 @@ import java.util.*;
  * Game of Life starter code. Demonstrates how to create and populate the game using the GridWorld framework.
  * Also demonstrates how to provide accessor methods to make the class testable by unit tests.
  * 
- * @author @gcschmit
- * @version 18 July 2014
+ * @author @Adam Arato
+ * @version 23 november 2014
  */
 public class GameOfLife
 {
@@ -44,14 +44,12 @@ public class GameOfLife
         
     }
     
-    /**
-     * Creates the actors and inserts them into their initial starting positions in the grid
-     *
-     * @pre     the grid has been created
-     * @post    all actors that comprise the initial state of the game have been added to the grid
+   
+        /**
+     * This method makes it really easy to make a new actor
      * 
+     * @param  an x and y coordinate
      */
-    
     private void makeActor(int x, int y){
         Grid<Actor> grid = world.getGrid();
         Rock rock1 = new Rock();
@@ -60,7 +58,13 @@ public class GameOfLife
     }
     
     
-    
+     /**
+     * Creates the actors and inserts them into their initial starting positions in the grid
+     *
+     * @pre     the grid has been created
+     * @post    all actors that comprise the initial state of the game have been added to the grid
+     * 
+     */
     
     private void populateGame()
     {
@@ -91,16 +95,28 @@ public class GameOfLife
         makeActor(31,31);
      */
     }
-    
+     /**
+     * you need to have a x and y coord inputed
+     *
+     * @post    returns the number of neighbors
+     * 
+     */
     private int neighbors(int x,int y){
         Grid<Actor> grid = world.getGrid();
         Location l = new Location(x,y);
         ArrayList n = grid.getNeighbors(l);
         int neighbor = n.size();
         return neighbor;
-
    
     }
+    
+     /**
+     * updates the grid
+     *
+     * @pre     the grid has been created
+     * @post    calculates where to put the actor next and updates the grid
+     * 
+     */
     private void createNextGeneration()
     {
         /** You will need to read the documentation for the World, Grid, and Location classes
@@ -190,6 +206,17 @@ public class GameOfLife
         Location loc = new Location(row, col);
         Actor actor = world.getGrid().get(loc);
         return actor;
+    }
+    
+    public int checkActor(int x,int y){
+        Grid<Actor> grid = world.getGrid();
+        ArrayList<Location> alive = new ArrayList<Location>(grid.getOccupiedLocations());
+        Location l = new Location(x,y);
+        if(!alive.contains(l)){
+                    return 1;
+                } else{
+                    return 2;
+                }
     }
 
     /**
