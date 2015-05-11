@@ -1,0 +1,6 @@
+Starting this project was the most dificult part. Getting to know the gridworld and what i can do.
+My algorithm used arraylists and I had to experiment with those a little. The unit test was the other difficult
+part. I really do not think I did that right. As for advice on for next years students, the most important thing
+is to be able to keep track of all of your living cells locations and updateing the grid.
+I used a Array list. After that there are multiple algorithms that can be used to figure out where to put the 
+actactors. Overall i really liked this project and i was really happy when i finally found an algorthm that works. 

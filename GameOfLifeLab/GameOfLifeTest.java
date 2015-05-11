@@ -89,7 +89,7 @@ public class GameOfLifeTest
          *  4 - - - - - - - -
          *  
          */
-        
+
         GameOfLife game = new GameOfLife();
         final int ROWS = game.getNumRows();
         final int COLS = game.getNumCols();
@@ -98,13 +98,14 @@ public class GameOfLifeTest
         {
             for(int col = 0; col < COLS; col++)
             {
+               // System.out.println("does it get here?");
                 // in this example, an alive cell has a non-null actor and a dead cell has a null actor
                 Actor cell = game.getActor(row, col);
 
                 // if the cell at the current row and col should be alive, assert that the actor is not null
                 if(     (row == 0 && col == 2) ||
-                        (row == 2 && col == 0) ||
-                        (row == 2 && col == 1))
+                (row == 2 && col == 0) ||
+                (row == 2 && col == 1))
                 {
                     assertNotNull("expected alive cell at (" + row + ", " + col + ")", cell);
                 }
@@ -121,7 +122,29 @@ public class GameOfLifeTest
     {
         /* verify that the actual pattern matches the expected pattern after 3 generations         *  
          */
-        
+        //int count = 10;
+        //assertEquals(10, count, 1e-6);
+        GameOfLife game = new GameOfLife();
+        final int ROWS = game.getNumRows();
+        final int COLS = game.getNumCols();
+        for(int x = 0; x<COLS; x++)
+        {
+            for(int y = 0; y<ROWS; y++)
+            {
+                if(    (x == 0 && y == 2) ||
+                (x == 2 && y == 0) ||
+                (x == 2 && y == 1))
+                {
+                    assertNotNull("expected alive cell at (" + x + ", " + y + ")");
+                }
+                else // else, the cell should be dead; assert that the actor is null
+                {
+                    assertNull("expected dead cell at (" + x + ", " + y + ")");
+                }
+
+            }
+        }
+
         // ...
     }
 }
